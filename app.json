@@ -1,0 +1,21 @@
+{
+  "name": "SHM",
+  "displayName": "SHM",
+  "expo": {
+    "name": "SHM",
+    "slug": "SHM",
+    "version": "1.1.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "icon": "./src/assets/ic_launcher.png",
+    "splash": {
+      "image": "./src/assets/logoSHM.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#000000"
+    },
+    "android": {
+      "package": "br.com.shmbrasil.app"
+    }
+  }
+}
