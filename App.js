@@ -1,17 +1,22 @@
 import React, { useState } from 'react';
-import { View, StyleSheet, Button, Image, ImageBackground } from 'react-native';
+import { View, StyleSheet, Button, Image, ImageBackground, Platform, NativeModules } from 'react-native';
 import { WebView } from 'react-native-webview';
+import { StatusBar } from 'expo-status-bar';
 
 export default function App() {
-  const [url, setUrl] = useState('projetos.42dias.com.br/SHM');
+  const [url, setUrl] = useState('http://projetos.42dias.com.br/SHM/');
   const [go, setGo] = useState(false);
+  const { StatusBarManager } = NativeModules;
+  const STATUSBAR_HEIGHT = Platform.OS === "ios" ? 20 : StatusBarManager.HEIGHT;
 
   if (go == false) {
     return (
+      <View style={{ height: '100%', backgroundColor: '#122540'}}>
+        <StatusBar style="light" />
       <ImageBackground
-        style={styles.imgBg}
+        style={{color: '#fff', flex: 1, width: '100%', resizeMode: "cover", justifyContent: "center",marginTop: STATUSBAR_HEIGHT}}
         imageStyle={styles.bgImageStyle}
-        source={require('./src/assets/shm_app.jpeg')}
+        source={require('./src/assets/app.png')}
         /* blurRadius={2} */
       >
       <View style={styles.bgShadow}>
@@ -36,13 +41,17 @@ export default function App() {
             </View>
       </View>  
       </ImageBackground>
+      </View>
     );
   } else {
     return(
+      <View style={{ height: '100%', backgroundColor: '#213361'}}>
+      <StatusBar style="light" />
       <WebView
         source={{ uri: url }}
-        style={{ marginTop: 20 }}
+        style={{ marginTop: STATUSBAR_HEIGHT }}
       />
+      </View>
     );
   }
 }
