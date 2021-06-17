@@ -16,6 +16,9 @@
     },
     "android": {
       "package": "com.chrisrock.webview_app"
+    },
+    "ios": {
+      "bundleIdentifier": "SHM-Brasil"
     }
   }
 }
