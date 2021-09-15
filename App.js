@@ -4,7 +4,7 @@ import { WebView } from 'react-native-webview';
 import { StatusBar } from 'expo-status-bar';
 
 export default function App() {
-  const [url, setUrl] = useState('http://projetos.42dias.com.br/SHM/');
+  const [url, setUrl] = useState('http://208.109.35.135/');
   const [go, setGo] = useState(false);
   const { StatusBarManager } = NativeModules;
   const STATUSBAR_HEIGHT = Platform.OS === "ios" ? 20 : StatusBarManager.HEIGHT;
